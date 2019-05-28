@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用layui</title>
+  <link rel="stylesheet" href="node_modules/layui-src/src/css/layui.css">
+  <link href="tasp.css" rel="stylesheet" />
+  <link href="orderconfirm.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+ 
+<!-- 你的HTML代码 -->
+<div class="layui-tab">
+        <ul class="layui-tab-title">
+          <li class="layui-this">全部订单</li>
+          <li>待付款</li>
+          <li>待发货</li>
+          <li>待收货</li>
+          <li>订单管理</li>
+        </ul>
+
+        <div class="layui-tab-content">
+                        <div class="layui-tab-item">
+                            <div id="shop" class="grid-c">
+                                <div>
+                                  <h3 class="dib">订单信息</h3>
+                          
+                                    <table class="order-table">
+                                    <thead>
+                                      <tr>
+                                        <th class="s-title">店铺宝贝<hr/></th>
+                                        <th class="s-price">单价(元)<hr/></th>
+                                        <th class="s-amount">数量<hr/></th>
+                                        <th class="s-agio">状态<hr/></th>
+                                        <th class="s-total">总价<hr/></th>
+                                        <th class="s-total">按钮<hr/></th>
+                                      </tr>
+                                    </thead>
+                          
+                                    <tbody>
+                                      
+                                      <td colspan="6"></td>
+                                      <tr class="shop blue-line">
+                                        <td colspan="3">店铺：
+                                          <a>{{shop_name}}</a>
+                                          <span class="seller">卖家：
+                                            <a>{{seller_name}}</a>
+                                          </span>
+                                        </td>
+                                        <td colspan="3" class="promo">
+                                        </td>
+                                      </tr>
+                          
+                                      <tr class="item" data-pointRate="0">
+                                        <td class="s-title">
+                                          <a href="#" target="_blank" title="经典卡包" class="J_MakePoint">
+                                            <img src="https://cdn.bleacherreport.net/images/team_logos/328x328/hearthstone.png" class="itempic">
+                                            <span class="title J_MakePoint">{{message}}</span>
+                                          </a>
+                                          <div class="props" id="app">
+                                            <ul>
+                                              <li v-for="property in properties">
+                                                {{ property.text }}
+                                              </li>
+                                            </ul>
+                                          </div>
+                                        </td>
+                          
+                                        <td class="s-price">
+                                          <span>
+                                            <em>{{price}}</em>
+                                          </span>
+                                        </td>
+                          
+                                        <td class="s-amount">1</td>
+                                        <td class="s-agio">
+                                          <div>{{status}}</div>
+                                        </td>
+                                        <td class="s-total">
+                                          <span class='price '>
+                                            <em>{{price}}</em>
+                                          </span>
+                                        </td>
+                                        <td class="s-buttom">
+                                            <span class='props'>
+                                                <a href="#" class="myButton">button</a>
+                                            </span>
+                                        </td>
+                                      </tr>
+                                      
+                                      <tr class="blue-line" style="height: 2px;">
+                                        <td colspan="6"></td>
+                                      </tr>
+                                      
+                                      <tr class="shop-total blue-line">
+                                        <td colspan="6">店铺合计(<span v-bind:style="J_Exclude">不</span>含运费)：
+                                          <span class='price g_price '>
+                                            <span>&yen;</span>
+                                            <em class="style-middle-bold-red J_ShopTotal"  >{{price}}</em>
+                                          </span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
+                            </div>
+                        </div>
+          <div class="layui-tab-item">内容2</div>
+          <div class="layui-tab-item">内容3</div>
+          <div class="layui-tab-item">内容4</div>
+          <div class="layui-tab-item">内容5</div>
+        </div>
+      </div>
+ 
+<script src="node_modules/layui-src/src/layui.js"></script>
+<script>
+//一般直接写在一个js文件中
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer
+  ,form = layui.form;
+  
+  layer.msg('Hello World');
+});
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script> 
+
+<script type="text/javascript" src="./demo.js"></script>
+</body>
+</html>
