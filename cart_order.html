@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <title>开始使用layui</title>
   <link rel="stylesheet" href="node_modules/layui-src/src/css/layui.css">
-  <link href="tasp.css" rel="stylesheet" />
-  <link href="orderconfirm.css" rel="stylesheet" />
+  <link href="css/tasp.css" rel="stylesheet" />
+  <link href="css/orderconfirm.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
  
 <!-- 你的HTML代码 -->
+<div class="divcss5">
 <div class="layui-tab">
         <ul class="layui-tab-title">
           <li class="layui-this">全部订单</li>
@@ -23,7 +24,7 @@
 
         <div class="layui-tab-content">
                         <div class="layui-tab-item">
-                            <div id="shop" class="grid-c">
+                            <div id="shop">
                                 <div>
                                   <h3 class="dib">订单信息</h3>
                           
@@ -39,7 +40,7 @@
                                       </tr>
                                     </thead>
                           
-                                    <tbody>
+                                    <div>
                                       
                                       <td colspan="6"></td>
                                       <tr class="shop blue-line">
@@ -85,7 +86,7 @@
                                         </td>
                                         <td class="s-buttom">
                                             <span class='props'>
-                                                <a href="#" class="myButton">button</a>
+                                                <a href="src/refound.html" class="myButton">退款</a>
                                             </span>
                                         </td>
                                       </tr>
@@ -102,7 +103,7 @@
                                           </span>
                                         </td>
                                       </tr>
-                                    </tbody>
+                                    </div>
                                   </table>
                                 </div>
                             </div>
@@ -113,6 +114,7 @@
           <div class="layui-tab-item">内容5</div>
         </div>
       </div>
+</div>
  
 <script src="node_modules/layui-src/src/layui.js"></script>
 <script>
@@ -130,6 +132,6 @@ layui.use('element', function(){
 });
 </script> 
 
-<script type="text/javascript" src="./demo.js"></script>
+<script type="text/javascript" src="./cart_order.js"></script>
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>开始使用layui</title>
+  <link rel="stylesheet" href="../node_modules/layui-src/src/css/layui.css">
+  <link href="../css/tasp.css" rel="stylesheet" />
+  <link href="../css/orderconfirm.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+ 
+<!-- 你的HTML代码 -->
+<div class="divcss5" id="refound">
+<h1 class="dib">退款进度</h1>
+<div lay-filter="process_per" class="layui-progress layui-progress-big" lay-showPercent="yes">
+    <div class="layui-progress-bar layui-bg-green" lay-percent="0%"></div>
+</div>
+<br/>
+<form class="layui-form" action="" v-if="start">
+    
+    <div class="layui-form-item">
+      <label class="layui-form-label">退款类型</label>
+      <div class="layui-input-block">
+        <select name="city" lay-verify="required">
+          <option value=""></option>
+          <option value="0">退款退货</option>
+          <option value="1">仅退款</option>
+          <option value="2">退换货</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="layui-form-item layui-form-text">
+      <label class="layui-form-label">退款理由</label>
+      <div class="layui-input-block">
+        <textarea name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <button class="layui-btn site-submit-active" v-on:click="render" data-type="submit_data">立即提交</button>
+        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+      </div>
+    </div>
+  </form>
+  <div class="divcss5" v-if="waiting">
+      <img width="300" src="../img/timg.jpeg"/>
+      <h1>正在处理中</h1>
+  </div>
+</div>
+ 
+<script src="../node_modules/layui-src/src/layui.js"></script>
+<script>
+layui.use(['layer', 'form'], function(){
+  var layer = layui.layer
+  var form = layui.form;
+});
+
+layui.use('element', function(){
+  var $ = layui.jquery;
+  var element = layui.element;
+  var active = {
+    submit_data: function(){
+      element.progress('process_per', '50%');
+    }
+    ,loading: function(othis){
+      var DISABLED = 'layui-btn-disabled';
+      if(othis.hasClass(DISABLED)) return;
+      
+      othis.addClass(DISABLED);
+    }
+  };
+  $('.site-submit-active').on('click', function(){
+    var othis = $(this), type = $(this).data('type');
+    active[type] ? active[type].call(this, othis) : '';
+  });
+});
+</script>
+<script type="text/javascript" src="./refound.js"></script>
+</body>
+</html>
