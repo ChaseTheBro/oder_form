@@ -1,0 +1,90 @@
+<div>
+        <table class="order-table">
+        <thead>
+          <tr>
+            <th class="s-title">店铺宝贝<hr/></th>
+            <th class="s-price">单价(元)<hr/></th>
+            <th class="s-amount">数量<hr/></th>
+            <th class="s-agio">状态<hr/></th>
+            <th class="s-total">总价<hr/></th>
+            <th class="s-total">交易操作<hr/></th>
+          </tr>
+        </thead>
+
+        <div>
+          
+          <td colspan="6"></td>
+          <tr class="shop blue-line">
+            <td colspan="3">店铺：
+              <a>{{shop_name}}</a>
+              <span class="seller">卖家：
+                <a>{{seller_name}}</a>
+              </span>
+            </td>
+            <td colspan="3" class="promo">
+            </td>
+          </tr>
+
+          <tr class="item" data-pointRate="0">
+            <td class="s-title">
+              <a href="#" target="_blank" title="经典卡包" class="J_MakePoint">
+                <img src="https://cdn.bleacherreport.net/images/team_logos/328x328/hearthstone.png" class="itempic">
+                <span class="title J_MakePoint">{{message}}</span>
+              </a>
+              <div class="props" id="app">
+                <ul>
+                  <li v-for="property in properties">
+                    {{ property.text }}
+                  </li>
+                </ul>
+              </div>
+            </td>
+
+            <td class="s-price">
+              <span>
+                <em>{{price}}</em>
+              </span>
+            </td>
+
+            <td class="s-amount">1</td>
+            <td class="s-agio">
+              <div>{{status}}</div>
+            </td>
+            <td class="s-total">
+              <span class='price'>
+                <em>{{price}}</em>
+              </span>
+            </td>
+            <td class="s-buttom">
+                <span class='props'>
+                  <div>
+                      <a href="src/refound.html" >退款</a>
+                  </div>
+                  <div>
+                      <a href="src/refound.html" >退款</a>
+                  </div>
+                  <div>
+                      <a href="src/refound.html" >退款</a>
+                  </div>
+                  <div>
+                      <a href="src/refound.html" >退款</a>
+                  </div>
+                </span>
+            </td>
+          </tr>
+          
+          <tr class="blue-line" style="height: 2px;">
+            <td colspan="6"></td>
+          </tr>
+          
+          <tr class="shop-total blue-line">
+            <td colspan="6">店铺合计(<span v-bind:style="J_Exclude">不</span>含运费)：
+              <span class='price g_price '>
+                <span>&yen;</span>
+                <em class="style-middle-bold-red J_ShopTotal"  >{{price}}</em>
+              </span>
+            </td>
+          </tr>
+        </div>
+      </table>
+    </div>

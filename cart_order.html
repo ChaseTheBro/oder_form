@@ -21,13 +21,21 @@
           <li>待收货</li>
           <li>订单管理</li>
         </ul>
+        <br/>
 
         <div class="layui-tab-content">
-                        <div class="layui-tab-item">
+                        <div class="layui-tab-item layui-show">
+                            
+                            <div class="layui-form-item" style="text-align: left">
+                                <label class="layui-form-label" >日期范围筛选</label>
+                                <div class="layui-input-inline">
+                                  <input type="text" class="layui-input" id="dateselect" placeholder=" - ">
+                                </div>
+                            </div>
+                            <div id="pagechange" style="text-align: left"></div>
+                            
                             <div id="shop">
                                 <div>
-                                  <h3 class="dib">订单信息</h3>
-                          
                                     <table class="order-table">
                                     <thead>
                                       <tr>
@@ -36,7 +44,7 @@
                                         <th class="s-amount">数量<hr/></th>
                                         <th class="s-agio">状态<hr/></th>
                                         <th class="s-total">总价<hr/></th>
-                                        <th class="s-total">按钮<hr/></th>
+                                        <th class="s-total">交易操作<hr/></th>
                                       </tr>
                                     </thead>
                           
@@ -80,13 +88,24 @@
                                           <div>{{status}}</div>
                                         </td>
                                         <td class="s-total">
-                                          <span class='price '>
+                                          <span class='price'>
                                             <em>{{price}}</em>
                                           </span>
                                         </td>
                                         <td class="s-buttom">
                                             <span class='props'>
-                                                <a href="src/refound.html" class="myButton">退款</a>
+                                              <div>
+                                                  <a href="src/refound.html" >退款</a>
+                                              </div>
+                                              <div>
+                                                  <a href="src/refound.html" >退款</a>
+                                              </div>
+                                              <div>
+                                                  <a href="src/refound.html" >退款</a>
+                                              </div>
+                                              <div>
+                                                  <a href="src/refound.html" >退款</a>
+                                              </div>
                                             </span>
                                         </td>
                                       </tr>
@@ -133,5 +152,6 @@ layui.use('element', function(){
 </script> 
 
 <script type="text/javascript" src="./cart_order.js"></script>
+<script type="text/javascript" src="./date.js"></script>
 </body>
 </html>
