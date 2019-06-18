@@ -13,6 +13,6 @@ var app = new Vue({
       status: '正在配送中',
       J_Exclude: {
         display: 'none'
-    }
+      }
     },
   })

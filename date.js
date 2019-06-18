@@ -9,7 +9,7 @@ layui.use('laydate', function(){
     ,min: '1970-1-1'
     ,max: 0
     ,change: function(value, date){
-      layer.alert('你选择的日期是：' + value + '<br><br>获得的对象是' + JSON.stringify(date));
+      //layer.alert('你选择的日期是：' + value + '<br><br>获得的对象是' + JSON.stringify(date));
     }
   });
 });
@@ -30,4 +30,30 @@ layui.use(['laypage', 'layer'], function(){
       }
     }
   });
+});
+
+layui.use('layer', function(){
+  var $ = layui.jquery, layer = layui.layer;
+
+  var active = {
+    offset: function(othis){      
+      layer.prompt({title: '请输入支付密码', formType: 1}, 
+      
+      function(pass, index){
+        layer.close(index);
+        if(/^\d+$/.test(pass) && pass.length == 6){
+          layer.msg('密码'+ pass);
+        }
+        else{
+          layer.msg('密码应该是6位纯数字');
+        }
+      });
+    }
+  };
+  
+  $('#layerDemo .layui-btnjj').on('click', function(){
+    var othis = $(this), method = othis.data('method');
+    active[method] ? active[method].call(this, othis) : '';
+  });
+  
 });
